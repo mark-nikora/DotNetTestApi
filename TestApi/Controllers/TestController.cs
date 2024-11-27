@@ -18,7 +18,7 @@ namespace TestApi.Controllers
         private readonly IMapper _mapper = mapper;
 
         [HttpGet]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetTestById(int id)
         {
             try
             {
@@ -29,6 +29,26 @@ namespace TestApi.Controllers
             {
                 return StatusCode(500);
             }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var test = await _testRepository.GetById(id);
+                if (test == null)
+                {
+                    return NotFound();
+                }
+                _testRepository.Delete(test);
+                await _testRepository.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+            return StatusCode(204);
         }
 
         [HttpPut]
