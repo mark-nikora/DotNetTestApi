@@ -13,10 +13,10 @@ namespace TestApi.Repositories
 {
     public class QuestionRepository(AppDbContext context) : BaseRepository<Question>(context), IQuestionRepository
     {
-        public async Task<IEnumerable<Question?>> GetTestQuestions(int Id)
+        public async Task<IEnumerable<Question?>> GetTestQuestions(int TestId)
         {
             var questions = await context.Set<TestQuestion>()
-                         .Where(tq => tq.TestId == Id)
+                         .Where(tq => tq.TestId == TestId)
                          .Select(tq => tq.Question)
                          .ToListAsync();
             return questions;

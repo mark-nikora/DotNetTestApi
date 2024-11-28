@@ -28,18 +28,39 @@ namespace TestApi.Tests.Controller
         }
 
         [Fact]
-        public async Task TestController_GetById_ReturnOk()
+        public async Task TestController_GetTestById_ReturnOk()
         {
             // Arrange
             int TestId = 1;
-            var controller = new TestController(_testRepository, _testService);
+            var controller = new TestController(_testRepository, _testService, _mapper);
 
             // Act
-            var result = await controller.GetById(TestId);
+            var result = await controller.GetTestById(TestId);
+
+            // Assert            
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            Assert.Equal(200, okResult.StatusCode);
+
+        }
+
+        [Fact]
+        public async Task TestController_Update_ReturnOk()
+        {
+            // Arrange
+            var testDto = new TestDetailsDto()
+            {
+                Id = 1,
+                Name = "c# basics again",
+                Description = "this c# test has been updated"
+            };
+
+            // Act
+            var controller = new TestController(_testRepository, _testService, _mapper);
+            var result = await controller.Update(testDto);
 
             // Assert
-            result.Should().NotBeNull();
-            result.Should().BeOfType(typeof(OkObjectResult));
+            var okResult = Assert.IsType<OkResult>(result);
+            Assert.Equal(200, okResult.StatusCode);
         }
     }
 

@@ -52,7 +52,7 @@ namespace TestApi.Data
             modelBuilder.Entity<Question>().HasData(SeedData.Questions);
             modelBuilder.Entity<Option>().HasData(SeedData.Options);
             modelBuilder.Entity<TestQuestion>().HasData(SeedData.TestQuestions);
-
+            modelBuilder.Entity<Result>().HasData(SeedData.Results);
         }
 
     }

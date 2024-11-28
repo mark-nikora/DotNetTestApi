@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../frontend"
+		},
+		{
+			"path": "../../../design"
+		},
+		{
+			"path": "../../../../reference"
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"previewLimit": 50,
+				"driver": "SQLite",
+				"name": "testapidb",
+				"database": "./Data/Test.db"
+			}
+		]
+	}
+}

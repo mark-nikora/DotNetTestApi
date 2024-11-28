@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 namespace TestApi.Repositories
 {
 
-    public interface IQuestionRepository : IBaseRepository<Question>
+    public interface IOptionRepository : IBaseRepository<Option>
     {
-
-        public Task<IEnumerable<Question?>> GetTestQuestions(int Id);
-
+        public Task<IEnumerable<Option?>> GetOptionsByQuestionId(int Id);
     }
-
 }
+
+
+
 
 

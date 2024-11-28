@@ -17,6 +17,90 @@ namespace TestApi.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
 
+            modelBuilder.Entity("Result", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Mark")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OutOf")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TestId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("Result");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9650),
+                            Mark = 3,
+                            OutOf = 10,
+                            TestId = 1,
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9650),
+                            Username = "Mark"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Mark = 3,
+                            OutOf = 10,
+                            TestId = 1,
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Username = "Sarah"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Mark = 5,
+                            OutOf = 10,
+                            TestId = 1,
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Username = "Keisha"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Mark = 8,
+                            OutOf = 10,
+                            TestId = 1,
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1780),
+                            Username = "Throca"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1790),
+                            Mark = 3,
+                            OutOf = 10,
+                            TestId = 1,
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 999, DateTimeKind.Utc).AddTicks(1790),
+                            Username = "Medina"
+                        });
+                });
+
             modelBuilder.Entity("TestApi.Models.Option", b =>
                 {
                     b.Property<int>("Id")
@@ -50,361 +134,361 @@ namespace TestApi.Migrations
                         {
                             Id = 1,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3910),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(6390),
                             Description = "void",
                             QuestionId = 1,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3910)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(6390)
                         },
                         new
                         {
                             Id = 2,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5230),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7750),
                             Description = "return",
                             QuestionId = 1,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5230)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7750)
                         },
                         new
                         {
                             Id = 3,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7790),
                             Description = "method",
                             QuestionId = 1,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7790)
                         },
                         new
                         {
                             Id = 4,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "empty",
                             QuestionId = 1,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800)
                         },
                         new
                         {
                             Id = 5,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "private",
                             QuestionId = 2,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800)
                         },
                         new
                         {
                             Id = 6,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "public",
                             QuestionId = 2,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5240)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800)
                         },
                         new
                         {
                             Id = 7,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "internal",
                             QuestionId = 2,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800)
                         },
                         new
                         {
                             Id = 8,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "protected",
                             QuestionId = 2,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800)
                         },
                         new
                         {
                             Id = 9,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7800),
                             Description = "int",
                             QuestionId = 3,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 10,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810),
                             Description = "float",
                             QuestionId = 3,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 11,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810),
                             Description = "decimal",
                             QuestionId = 3,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 12,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810),
                             Description = "string",
                             QuestionId = 3,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 13,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810),
                             Description = "To import namespaces",
                             QuestionId = 4,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5250)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 14,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810),
                             Description = "To declare variables",
                             QuestionId = 4,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7810)
                         },
                         new
                         {
                             Id = 15,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820),
                             Description = "To execute cleanup code",
                             QuestionId = 4,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820)
                         },
                         new
                         {
                             Id = 16,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820),
                             Description = "To define methods",
                             QuestionId = 4,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820)
                         },
                         new
                         {
                             Id = 17,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820),
                             Description = "int num = null;",
                             QuestionId = 5,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5260)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820)
                         },
                         new
                         {
                             Id = 18,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5290),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820),
                             Description = "int? num = null;",
                             QuestionId = 5,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5290)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820)
                         },
                         new
                         {
                             Id = 19,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5290),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820),
                             Description = "nullable int num;",
                             QuestionId = 5,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5290)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7820)
                         },
                         new
                         {
                             Id = 20,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "num = null;",
                             QuestionId = 5,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 21,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "Checks if an object is a specific type",
                             QuestionId = 6,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 22,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "Creates a new object",
                             QuestionId = 6,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 23,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "Casts an object to a specific type",
                             QuestionId = 6,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 24,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "Compares two objects for equality",
                             QuestionId = 6,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 25,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830),
                             Description = "ArgumentException",
                             QuestionId = 7,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7830)
                         },
                         new
                         {
                             Id = 26,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850),
                             Description = "IndexOutOfRangeException",
                             QuestionId = 7,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5300)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850)
                         },
                         new
                         {
                             Id = 27,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850),
                             Description = "OutOfMemoryException",
                             QuestionId = 7,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850)
                         },
                         new
                         {
                             Id = 28,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850),
                             Description = "NullReferenceException",
                             QuestionId = 7,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7850)
                         },
                         new
                         {
                             Id = 29,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "To define a background thread",
                             QuestionId = 8,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 30,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "To mark a method for asynchronous execution",
                             QuestionId = 8,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 31,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "To pause a method",
                             QuestionId = 8,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 32,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "To cancel a task",
                             QuestionId = 8,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 33,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "List",
                             QuestionId = 9,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5310)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 34,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "Array",
                             QuestionId = 9,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 35,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860),
                             Description = "Dictionary",
                             QuestionId = 9,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7860)
                         },
                         new
                         {
                             Id = 36,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7950),
                             Description = "Queue",
                             QuestionId = 9,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7950)
                         },
                         new
                         {
                             Id = 37,
                             Correct = true,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960),
                             Description = "System.Object",
                             QuestionId = 10,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960)
                         },
                         new
                         {
                             Id = 38,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960),
                             Description = "System.Type",
                             QuestionId = 10,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960)
                         },
                         new
                         {
                             Id = 39,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960),
                             Description = "System.Base",
                             QuestionId = 10,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960)
                         },
                         new
                         {
                             Id = 40,
                             Correct = false,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960),
                             Description = "System.Class",
                             QuestionId = 10,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5320)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(7960)
                         });
                 });
 
@@ -435,82 +519,82 @@ namespace TestApi.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(2690),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5150),
                             Description = "Which keyword is used to define a method in C# that does not return a value?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(2690)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5150)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3410),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900),
                             Description = "What is the default access modifier for a class in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3410)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900),
                             Description = "Which of the following is NOT a value type in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900),
                             Description = "What is the purpose of the 'using' statement in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900),
                             Description = "What is the correct way to declare a nullable int in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3420)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5900)
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910),
                             Description = "What does the 'is' keyword do in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910)
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910),
                             Description = "Which exception is thrown when accessing an array element out of bounds in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910)
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910),
                             Description = "What is the purpose of the 'async' keyword in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910)
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910),
                             Description = "Which collection in C# is used to store key-value pairs?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3430)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910)
                         },
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3440),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910),
                             Description = "What is the base class for all types in C#?",
                             Mark = 0,
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(3440)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(5910)
                         });
                 });
 
@@ -542,10 +626,10 @@ namespace TestApi.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(780),
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(3130),
                             Description = "Test on the fundamendals of csharp",
                             Name = "C# Basics",
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(780)
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(3130)
                         });
                 });
 
@@ -574,72 +658,83 @@ namespace TestApi.Migrations
                         {
                             QuestionId = 1,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5680),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(5680)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(8370),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(8370)
                         },
                         new
                         {
                             QuestionId = 2,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9240),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9240)
                         },
                         new
                         {
                             QuestionId = 3,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9240),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9240)
                         },
                         new
                         {
                             QuestionId = 4,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9240),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 5,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6320)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 6,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 7,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 8,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 9,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         },
                         new
                         {
                             QuestionId = 10,
                             TestId = 1,
-                            CreatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330),
-                            UpdatedAt = new DateTime(2024, 11, 25, 3, 30, 14, 216, DateTimeKind.Utc).AddTicks(6330)
+                            CreatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250),
+                            UpdatedAt = new DateTime(2024, 11, 27, 6, 48, 31, 998, DateTimeKind.Utc).AddTicks(9250)
                         });
+                });
+
+            modelBuilder.Entity("Result", b =>
+                {
+                    b.HasOne("TestApi.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("TestApi.Models.Option", b =>

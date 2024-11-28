@@ -38,7 +38,6 @@ namespace TestApi.Tests.Repository
             modelBuilder.Entity<Test>().HasData(SeedData.Tests);
 
             return dbContext;
-
         }
 
         [Fact]
