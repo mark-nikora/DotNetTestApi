@@ -25,6 +25,11 @@ builder.Services.AddScoped<IOptionRepository, OptionRepository>();
 builder.Services.AddScoped<ITestService, TestService>();
 var app = builder.Build();
 
+app.UseCors(builder =>
+    builder.WithOrigins("http://localhost:5173") // Add your frontend's URL
+           .AllowAnyHeader()
+           .AllowAnyMethod());
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

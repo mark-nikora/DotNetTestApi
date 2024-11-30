@@ -7,7 +7,7 @@ using TestApi.Services;
 
 namespace TestApi.Controllers
 {
-    [Route("")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class TestController(ITestRepository testRepository, ITestService testService, IMapper mapper) : Controller
     {
@@ -18,12 +18,27 @@ namespace TestApi.Controllers
         private readonly IMapper _mapper = mapper;
 
         [HttpGet]
-        public async Task<IActionResult> GetTestById(int id)
+        public async Task<IActionResult> GetTestWithQuestions(int id)
         {
             try
             {
                 var testDto = await _testService.GetTestWithQuestions(id);
                 return testDto == null ? NotFound() : Ok(testDto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllTests()
+        {
+            try
+            {
+                var tests = await _testRepository.GetAllAsync();
+                var testDtos = _mapper.Map<List<TestDetailsDto>>(tests).ToList();
+                return testDtos == null ? NotFound() : Ok(testDtos);
             }
             catch (Exception)
             {

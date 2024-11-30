@@ -35,7 +35,7 @@ namespace TestApi.Tests.Controller
             var controller = new TestController(_testRepository, _testService, _mapper);
 
             // Act
-            var result = await controller.GetTestById(TestId);
+            var result = await controller.GetTestWithQuestions(TestId);
 
             // Assert            
             var okResult = Assert.IsType<OkObjectResult>(result);
