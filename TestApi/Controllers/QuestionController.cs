@@ -3,32 +3,34 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TestApi.Contracts;
+using TestApi.DTOs;
 using TestApi.Models;
 using TestApi.Repositories;
 
 namespace TestApi.Controllers
 {
-    // [Route("")]
-    // [ApiController]
-    // public class QuestionController : Controller
-    // {
+    [Route("[controller]/[action]")]
+    [ApiController]
+    public class QuestionController(IQuestionRepository questionRepository, IQuestionService questionService, IMapper mapper) : Controller
+    {
 
-    //     private readonly IQuestionRepository _questionRepository;
+        public readonly IQuestionService _questionService = questionService;
+        private readonly IQuestionRepository _questionRepository = questionRepository;
 
-    //     public QuestionController(IQuestionRepository questionRepository)
-    //     {
-    //         _questionRepository = questionRepository;
-    //     }
+        private readonly IMapper _mapper = mapper;
 
-    //     [HttpGet]
-    //     public async Task<IActionResult> GetQuestion(int id)
-    //     {
-    //         var result = await _questionRepository.GetQuestion(id);
-    //         if (result == null)
-    //         {
-    //             return NotFound(id);
-    //         }
-    //         return Ok(result);
-    //     }
-    // }
+        [HttpGet]
+        public async Task<IActionResult> GetTestQuestions(int id)
+        {
+            try
+            {
+                var questionDtos = await _questionService.GetTestQuestions(id);
+                return questionDtos == null ? NotFound() : Ok(questionDtos);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+    }
 }

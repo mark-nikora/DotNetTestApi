@@ -3,6 +3,7 @@ using TestApi.Repositories;
 using TestApi.Middleware;
 using TestApi.Data;
 using TestApi.Services;
+using TestApi.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddLogging();
 builder.Services.AddControllers();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
+builder.Services.AddCors();
+
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -23,12 +26,17 @@ builder.Services.AddScoped<ITestRepository, TestRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<IOptionRepository, OptionRepository>();
 builder.Services.AddScoped<ITestService, TestService>();
+builder.Services.AddScoped<IQuestionService, QuestionService>();
+
 var app = builder.Build();
 
 app.UseCors(builder =>
     builder.WithOrigins("http://localhost:5173") // Add your frontend's URL
            .AllowAnyHeader()
            .AllowAnyMethod());
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

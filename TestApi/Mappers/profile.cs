@@ -18,7 +18,8 @@ public class MappingProfile : Profile
 
         CreateMap<Question, QuestionDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+            .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.Code));
 
         CreateMap<Option, OptionDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))

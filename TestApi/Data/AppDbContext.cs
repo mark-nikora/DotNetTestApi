@@ -27,6 +27,8 @@ namespace TestApi.Data
 
         private static void BuildRelationships(ModelBuilder modelBuilder)
         {
+            // question 1 -- M testquestion M -- 1 test
+
             modelBuilder.Entity<Question>()
              .HasMany(q => q.Option)
              .WithOne(o => o.Question)
@@ -44,6 +46,22 @@ namespace TestApi.Data
                 .HasOne(tq => tq.Test)
                 .WithMany(t => t.TestQuestion)
                 .HasForeignKey(tq => tq.TestId);
+
+            // question 1 -- M questionbank M -- 1 qbank
+
+            modelBuilder.Entity<QuestionBank>()
+                .HasKey(tq => new { tq.QuestionId, tq.QBankId });
+
+            modelBuilder.Entity<QuestionBank>()
+                .HasOne(qb => qb.Question)
+                .WithMany(q => q.QuestionBank)
+                .HasForeignKey(qb => qb.QuestionId);
+
+            modelBuilder.Entity<QuestionBank>()
+                .HasOne(tq => tq.QBank)
+                .WithMany(t => t.QuestionBank)
+                .HasForeignKey(tq => tq.QBankId);
+
         }
 
         private static void SeedModels(ModelBuilder modelBuilder)

@@ -13,9 +13,13 @@ namespace TestApi.Models
 
         public int Mark { get; set; } = 0;
 
+        public string? Code { get; set; } = null;
+
         public ICollection<Option> Option { get; set; } = [];
 
         public ICollection<TestQuestion> TestQuestion { get; set; } = [];
+
+        public ICollection<QuestionBank> QuestionBank { get; set; } = [];
 
 
     }

@@ -13,6 +13,8 @@ namespace TestApi.DTOs
 
         public int Mark { get; set; } = 0;
 
+        public string? Code { get; set; } = null;
+
         public List<OptionDto>? Options { get; set; }
 
     }
